@@ -1,0 +1,92 @@
+#exercise 1
+
+def exercise1 (tp, fp, fn):
+
+# Kiểm tra kiểu dữ liệu của tp, fp, fn
+  if not isinstance(tp, int) or not isinstance(fp, int) or not isinstance(fn, int):
+    if not isinstance(tp, int):
+      print('tp must be int')
+    if not isinstance(fp, int):
+      print('fp must be int')
+    if not isinstance(fn, int):
+      print('fn must be int')
+    return
+
+# Kiểm tra giá trị của tp, fp, fn
+  if tp <= 0 or fp <= 0 or fn <= 0:
+    print('tp and fp and fn must be greater than zero')
+    return
+
+ # Tính Precision, Recall và F1-score
+  precision = tp / (tp + fp)
+  recall = tp / (tp + fn)
+  f1_score = (2 * precision * recall) / (precision + recall)
+
+if __main__ == "__Q1_class_F1_score__":
+
+# In kết quả
+  print(f'precision: {precision}')
+  print(f'recall: {recall}')
+  print(f'f1-Score: {f1_score}')
+
+
+
+#exercise 1
+def exercise1():
+    try:
+        tp = int(input("Nhập giá trị của tp: "))
+        fp = int(input("Nhập giá trị của fp: "))
+        fn = int(input("Nhập giá trị của fn: "))
+    except ValueError:
+        print("Lỗi: Dữ liệu nhập vào không phải là một số nguyên.")
+        return
+
+    # Kiểm tra giá trị của tp, fp, fn
+    if tp <= 0 or fp <= 0 or fn <= 0:
+        print('tp, fp, và fn phải lớn hơn 0')
+        return
+
+    # Tính Precision, Recall và F1-score
+    precision = tp / (tp + fp)
+    recall = tp / (tp + fn)
+    f1_score = (2 * precision * recall) / (precision + recall)
+
+    if __main__ == "__Q1_class_F1_score__":
+
+    # In kết quả
+    print(f'Precision: {precision}')
+    print(f'Recall: {recall}')
+    print(f'F1-Score: {f1_score}')
+
+# Gọi hàm exercise1() từ chương trình chính
+if __name__ == "__main__":
+    exercise1()
+
+
+
+#exercise 1
+def evaluate_class_f1_score(tp, fp, fn):
+    # Kiểm tra kiểu dữ liệu của tp, fp, fn
+    if not all(isinstance(val, int) for val in [tp, fp, fn]):
+        print("Ví dụ: check fn là float, print 'fn must be int'")
+        return
+
+    # Kiểm tra giá trị của tp, fp, fn
+    if tp <= 0 or fp <= 0 or fn <= 0:
+        print("tp and fp and fn must be greater than zero")
+        return
+
+    # Tính Precision, Recall và F1-score
+    precision = tp / (tp + fp)
+    recall = tp / (tp + fn)
+    f1_score = (2 * precision * recall) / (precision + recall)
+
+if __main__ == "__Q1_class_F1_score__":
+    
+    # In kết quả
+    print("Precision:", precision)
+    print("Recall:", recall)
+    print("F1-score:", f1_score)
+
+# Test function
+evaluate_class_f1_score(a, 5, 10)
